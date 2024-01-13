@@ -1,0 +1,100 @@
+// Custom dropdown menu
+
+@import "variables";
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__current {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: $darkNeutralColor2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 1px 1px 3px gray;
+
+  &:hover {
+    background-color: rgba($color: $darkNeutralColor2, $alpha: 0.75);
+  }
+}
+
+.dropdown__text {
+  @include font(18, 400);
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.dropdown__img {
+  width: 18px;
+  height: 18px;
+}
+
+.dropdown__menu {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  width: 100%;
+  margin-top: 4px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px gray;
+  transform-origin: top;
+}
+.dropdown__menu_open {
+  display: block;
+  animation: openMenu 0.3s linear 0s 1 normal forwards;
+}
+.dropdown__menu_close {
+  display: block;
+  animation: closeMenu 0.3s linear 0s 1 normal forwards;
+}
+
+@keyframes openMenu {
+  0% {
+    opacity: 0.3;
+    transform: scaleY(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleY(100%);
+  }
+}
+@keyframes closeMenu {
+  0% {
+    opacity: 1;
+    transform: scaleY(100%);
+  }
+
+  100% {
+    display: none;
+    opacity: 0.3;
+    transform: scaleY(0%);
+  }
+}
+
+.dropdown__option {
+  @include font(18, 400);
+  padding: 8px 16px;
+  background-color: $darkNeutralColor3;
+  border-bottom: $darkNeutralColor2 2px solid;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: #d9d9c7;
+  }
+
+  &:first-child {
+    border-top-left-radius: 5.5px;
+    border-top-right-radius: 5.5px;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    border-bottom-left-radius: 5.5px;
+    border-bottom-right-radius: 5.5px;
+  }
+}

@@ -1,0 +1,56 @@
+// Custom input field
+
+@import "variables";
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  max-width: 100%;
+  padding: 8px;
+  background-color: $darkNeutralColor1;
+  border-radius: 5px;
+
+  .image-button {
+    width: 30px;
+  }
+}
+
+.input__label-field {
+  position: relative;
+  width: 100%;
+  margin-right: 10px;
+}
+.input__label-field_selected {
+  display: flex;
+  flex-direction: column;
+
+  .input__label {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .input__field {
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    padding-left: 7px;
+    border-left: $darkSecondaryColor 3px solid;
+  }
+}
+
+.input__label {
+  @include font();
+  white-space: nowrap;
+}
+
+.input__field {
+  @include font(18);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  background-color: transparent;
+}

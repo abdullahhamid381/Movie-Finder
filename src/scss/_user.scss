@@ -1,0 +1,79 @@
+// Information about the user (first and last name)
+// and a personal list of movies, series, or books of the user
+
+@import "variables";
+
+.user-info {
+  display: flex;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: $darkNeutralColor2 2px solid;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.user-info__img {
+  width: 240px;
+  height: 240px;
+  margin-right: 20px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 5px gray;
+
+  @media screen and (max-width: 600px) {
+    margin: 0 0 20px 0;
+  }
+}
+
+.user-info__title {
+  @include font(24, 700);
+  margin-bottom: 20px;
+}
+
+.user-info__name {
+  position: relative;
+
+  .input {
+    min-width: 300px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: $darkNeutralColor2;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 0;
+
+    @media screen and (max-width: 600px) {
+      position: relative;
+    }
+  }
+}
+
+.user-list {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: $darkNeutralColor2 2px solid;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.user-list__title {
+  @include font(24, 700);
+  padding-left: 7px;
+  margin-bottom: 20px;
+  border-left: $primaryColor 3px solid;
+}
+
+.user-list__items {
+  @extend .movies__items;
+}
+.user-list__items_no-results {
+  align-items: center;
+  padding: 5px 0;
+  overflow: hidden;
+}

@@ -1,0 +1,117 @@
+// Book item in the list of search results
+
+@import "variables";
+
+.book {
+  display: flex;
+  margin: 0 20px 15px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 475px) {
+    flex-direction: column;
+  }
+}
+
+.book__img-authors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 180px;
+  margin-right: 10px;
+
+  @media screen and (max-width: 645px) {
+    align-items: center;
+  }
+
+  @media screen and (max-width: 475px) {
+    align-self: center;
+    width: 80%;
+    margin: 0 0 10px 0;
+  }
+}
+
+.book__img {
+  @extend .movie__img;
+  width: 100%;
+  margin-bottom: 15px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.book__authors {
+  @include font();
+  text-align: center;
+}
+
+.book__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 220px;
+  overflow: hidden;
+
+  @media screen and (max-width: 475px) {
+    width: 100%;
+  }
+}
+
+.book__name {
+  display: flex;
+  flex-direction: column;
+}
+
+.book__title {
+  @include font(20, 700);
+  text-align: center;
+}
+
+.book__subtitle {
+  @include font(18, 400);
+  text-align: center;
+}
+
+.book__description {
+  @include font();
+  max-height: 150px;
+  margin-top: 10px;
+  overflow-y: auto;
+  word-break: break-word;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    width: 8px;
+    background-color: $darkNeutralColor3;
+    border-radius: 4px;
+  }
+}
+
+.book__date-vote {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.book__date {
+  @include font();
+}
+
+.book-description {
+  margin-bottom: 60px;
+}
+
+.book-description__title {
+  @include font(24, 700);
+  margin-bottom: 15px;
+}
+
+.book-description__text {
+  @include font();
+}

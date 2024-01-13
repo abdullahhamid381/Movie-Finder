@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap");
+
+$primaryColor: #7a316f;
+$darkPrimaryColor: #54234d;
+
+$secondaryColor: #aed8cc;
+$darkSecondaryColor: #86a69d;
+
+$neutralColor: #efefdc;
+$darkNeutralColor: #ebebd8;
+$darkNeutralColor1: #e3e3d1;
+$darkNeutralColor2: #d1d1c0;
+$darkNeutralColor3: #bfbfb0;
+
+$darkGrayColor: #4d4d4d;
+
+@mixin font($fontSize: 16, $fontWeight: 500) {
+  font-family: Open Sans;
+  font-size: $fontSize + px;
+  font-weight: $fontWeight;
+  color: black;
+}
